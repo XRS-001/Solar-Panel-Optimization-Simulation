@@ -1,24 +1,17 @@
 using UnityEngine;
 using System;
+using UnityEditor.ShaderGraph.Internal;
 
 [ExecuteInEditMode]
 public class SunCalculations : MonoBehaviour
 {
     public Transform sun;
     public float latitude = 0;  // Example latitude
-    public string date = ""; // Example date in dd/MM/yyyy
-    public string timeOfDay = ""; // Example time in HH:MM
+    public int dayOfYear;
+    public float timeInHours;
 
     void Update()
     {
-        // Parse the date
-        DateTime parsedDate = DateTime.ParseExact(date, "dd/MM/yyyy", null);
-        int dayOfYear = parsedDate.DayOfYear;
-
-        // Parse the time
-        TimeSpan parsedTime = TimeSpan.Parse(timeOfDay);
-        float timeInHours = (float)parsedTime.TotalHours;
-
         // Calculate solar declination
         float declination = 23.45f * Mathf.Sin(Mathf.Deg2Rad * (360f / 365f * (284 + dayOfYear)));
 
