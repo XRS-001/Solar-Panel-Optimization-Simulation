@@ -21,7 +21,7 @@ public class MoveObject : MonoBehaviour
             {
                 objectMoving = hit.transform.parent;
                 isDragging = true;
-                screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+                screenPoint = Camera.main.WorldToScreenPoint(objectMoving.position);
                 offset = objectMoving.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             }
         }
