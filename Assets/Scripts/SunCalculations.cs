@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using UnityEditor.ShaderGraph.Internal;
 
 [ExecuteInEditMode]
 public class SunCalculations : MonoBehaviour
